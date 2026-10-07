@@ -15,6 +15,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - name: Install Python packages
         run: pip install matplotlib pandas
 
@@ -35,6 +36,6 @@ jobs:
         with:
           name: daa-results
           path: |
-            src/results.csv
-            src/*.png
-            src/*.csv
+            data/*.csv
+            results/*.csv
+            results/graphs/*.png
