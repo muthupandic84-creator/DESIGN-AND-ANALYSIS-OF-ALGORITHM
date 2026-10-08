@@ -1,0 +1,41 @@
+name: DAA Benchmark
+
+on:
+  workflow_dispatch:
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python packages
+        run: pip install matplotlib pandas
+
+      - name: Generate datasets
+        working-directory: src
+        run: python dataset_generator.py
+
+      - name: Run benchmark
+        working-directory: src
+        run: python benchmark.py
+
+      - name: Generate plots
+        working-directory: src
+        run: python plot_results.py
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: daa-results
+          path: |
+            data/*.csv
+            results/*.csv
+            results/graphs/*.png
