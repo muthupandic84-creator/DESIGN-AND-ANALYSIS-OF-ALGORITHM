@@ -1,0 +1,34 @@
+\n Kruskal
+Kruskal accepts 1 2 1
+Kruskal accepts 1 3 2
+Kruskal accepts 3 4 2
+Kruskal accepts 0 2 3
+Kruskal accepts 4 5 3
+MST: [(1, 2, 1), (1, 3, 2), (3, 4, 2), (0, 2, 3), (4, 5, 3)] cost: 11
+\n Prim
+Prim accepts 0 2 3
+Prim accepts 2 1 1
+Prim accepts 1 3 2
+Prim accepts 3 4 2
+Prim accepts 4 5 3
+MST: [(0, 2, 3), (2, 1, 1), (1, 3, 2), (3, 4, 2), (4, 5, 3)] cost: 11
+\n Boruvka
+Boruvka accepts (0, 2, 3)
+Boruvka accepts (1, 2, 1)
+Boruvka accepts (1, 3, 2)
+Boruvka accepts (3, 4, 2)
+Boruvka accepts (4, 5, 3)
+MST: [(0, 2, 3), (1, 2, 1), (1, 3, 2), (3, 4, 2), (4, 5, 3)] cost: 11
+\nEqual-weight stress test: change edges (0,1) and (0,2) to weight 1; multiple equal-cost MST edge sets may exist.
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

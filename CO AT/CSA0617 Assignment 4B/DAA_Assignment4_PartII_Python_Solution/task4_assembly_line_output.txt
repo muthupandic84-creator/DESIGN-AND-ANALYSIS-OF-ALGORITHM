@@ -1,0 +1,40 @@
+BASE CASE
+Station 2: L1 stay=18, transfer=23, choose=1; L2 stay=17, transfer=16, choose=1
+Station 3: L1 stay=21, transfer=20, choose=2; L2 stay=22, transfer=27, choose=2
+Station 4: L1 stay=24, transfer=28, choose=1; L2 stay=26, transfer=25, choose=1
+Station 5: L1 stay=32, transfer=35, choose=1; L2 stay=30, transfer=32, choose=2
+Station 6: L1 stay=36, transfer=35, choose=2; L2 stay=37, transfer=43, choose=2
+Route: Line 1 Station 1 -> Line 2 Station 2 -> Line 1 Station 3 -> Line 2 Station 4 -> Line 2 Station 5 -> Line 1 Station 6
+Transfer points: [2, 3, 4, 6]
+Minimum production time: 38
+\nTRANSFER DISRUPTION: increase transfer L1->L2 at station 3
+Station 2: L1 stay=18, transfer=23, choose=1; L2 stay=17, transfer=16, choose=1
+Station 3: L1 stay=21, transfer=20, choose=2; L2 stay=22, transfer=27, choose=2
+Station 4: L1 stay=24, transfer=28, choose=1; L2 stay=26, transfer=44, choose=2
+Station 5: L1 stay=32, transfer=36, choose=1; L2 stay=31, transfer=32, choose=2
+Station 6: L1 stay=36, transfer=36, choose=1; L2 stay=38, transfer=43, choose=2
+Route: Line 1 Station 1 -> Line 2 Station 2 -> Line 1 Station 3 -> Line 1 Station 4 -> Line 1 Station 5 -> Line 1 Station 6
+Transfer points: [2, 3]
+Minimum production time: 39
+\nMACHINE DISRUPTION: Line 1 station 3 becomes slower
+Station 2: L1 stay=18, transfer=23, choose=1; L2 stay=17, transfer=16, choose=1
+Station 3: L1 stay=48, transfer=47, choose=2; L2 stay=22, transfer=27, choose=2
+Station 4: L1 stay=51, transfer=28, choose=2; L2 stay=26, transfer=52, choose=2
+Station 5: L1 stay=36, transfer=36, choose=1; L2 stay=31, transfer=36, choose=2
+Station 6: L1 stay=40, transfer=36, choose=2; L2 stay=38, transfer=47, choose=2
+Route: Line 1 Station 1 -> Line 2 Station 2 -> Line 2 Station 3 -> Line 2 Station 4 -> Line 2 Station 5 -> Line 1 Station 6
+Transfer points: [2, 6]
+Minimum production time: 39
+\nThree-line extension: state becomes f[line][station]; at each station compare staying on each line and transfers from every other line. Store predecessor line for each state to reconstruct route.
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

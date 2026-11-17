@@ -1,0 +1,75 @@
+\nWIDTH=18; MINIMUM PENALTY=257
+Line 1: Dynamic | unused=11 | penalty=121
+Line 2: programming | unused=7 | penalty=49
+Line 3: finds an optimal | unused=2 | penalty=4
+Line 4: arrangement | unused=7 | penalty=49
+Line 5: of words in a | unused=5 | penalty=25
+Line 6: document layout | unused=3 | penalty=9
+Line 7: engine | unused=12 | penalty=0
+DP states (minimum cost from word i to end):
+dp[0] (Dynamic): 257; next index=1
+dp[1] (programming): 136; next index=2
+dp[2] (finds): 87; next index=5
+dp[3] (an): 147; next index=5
+dp[4] (optimal): 204; next index=5
+dp[5] (arrangement): 83; next index=6
+dp[6] (of): 34; next index=10
+dp[7] (words): 73; next index=10
+dp[8] (in): 25; next index=11
+dp[9] (a): 1; next index=12
+dp[10] (document): 9; next index=12
+dp[11] (layout): 0; next index=13
+dp[12] (engine): 0; next index=13
+\nWIDTH=22; MINIMUM PENALTY=53
+Line 1: Dynamic programming | unused=3 | penalty=9
+Line 2: finds an optimal | unused=6 | penalty=36
+Line 3: arrangement of words | unused=2 | penalty=4
+Line 4: in a document layout | unused=2 | penalty=4
+Line 5: engine | unused=16 | penalty=0
+DP states (minimum cost from word i to end):
+dp[0] (Dynamic): 53; next index=2
+dp[1] (programming): 13; next index=4
+dp[2] (finds): 44; next index=5
+dp[3] (an): 0; next index=6
+dp[4] (optimal): 9; next index=6
+dp[5] (arrangement): 8; next index=8
+dp[6] (of): 0; next index=11
+dp[7] (words): 9; next index=11
+dp[8] (in): 4; next index=12
+dp[9] (a): 25; next index=12
+dp[10] (document): 0; next index=13
+dp[11] (layout): 0; next index=13
+dp[12] (engine): 0; next index=13
+\nWIDTH=26; MINIMUM PENALTY=2
+Line 1: Dynamic programming finds | unused=1 | penalty=1
+Line 2: an optimal arrangement of | unused=1 | penalty=1
+Line 3: words in a document layout | unused=0 | penalty=0
+Line 4: engine | unused=20 | penalty=0
+DP states (minimum cost from word i to end):
+dp[0] (Dynamic): 2; next index=3
+dp[1] (programming): 52; next index=4
+dp[2] (finds): 101; next index=5
+dp[3] (an): 1; next index=7
+dp[4] (optimal): 16; next index=7
+dp[5] (arrangement): 1; next index=10
+dp[6] (of): 16; next index=11
+dp[7] (words): 0; next index=12
+dp[8] (in): 36; next index=12
+dp[9] (a): 0; next index=13
+dp[10] (document): 0; next index=13
+dp[11] (layout): 0; next index=13
+dp[12] (engine): 0; next index=13
+\nBoundary test: width smaller than longest word
+Correctly handled: A word is wider than the line width.
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.
